@@ -1,0 +1,3 @@
+usr/include/libcamhal /usr/include
+usr/lib/libcamhal.a /usr/lib
+usr/lib/pkgconfig/libcamhal.pc /usr/lib/pkgconfig

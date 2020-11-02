@@ -1,0 +1,18 @@
+Source: ipu6-camera-hal
+Section: libs
+Priority: optional
+Build-Depends: debhelper-compat (= 12), cmake, dh-autoreconf, libexpat-dev, automake, libtool, libgstreamer1.0-dev, libgstreamer-plugins-base1.0-dev, libipu6-dev, libipu6
+Standards-Version: 4.5.0
+Maintainer: Commercial Engineering <commercial-engineering@canonical.com>
+Vcs-Browser: https://github.com/intel/ipu6-camera-hal
+Vcs-Git: https://github.com/intel/ipu6-camera-hal.git
+
+Package: libcamhal
+Architecture: all
+Depends: ${misc:Depends}, libipu6
+Description: shared libraries of HAL for ipu6 camera
+
+Package: libcamhal-dev
+Architecture: all
+Depends: ${misc:Depends}, libcamhal (= ${binary:Version}), libipu6-dev
+Description: headers and static library of HAL for ipu6 camera
