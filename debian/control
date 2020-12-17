@@ -8,11 +8,11 @@ Vcs-Browser: https://github.com/intel/ipu6-camera-hal
 Vcs-Git: https://github.com/intel/ipu6-camera-hal.git
 
 Package: libcamhal
-Architecture: all
+Architecture: any
 Depends: ${misc:Depends}, libipu6
 Description: shared libraries of HAL for ipu6 camera
 
 Package: libcamhal-dev
-Architecture: all
+Architecture: any
 Depends: ${misc:Depends}, libcamhal (= ${binary:Version}), libipu6-dev
 Description: headers and static library of HAL for ipu6 camera
