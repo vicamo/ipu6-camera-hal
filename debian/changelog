@@ -1,4 +1,13 @@
-ipu6-camera-hal (1) UNRELEASED; urgency=medium
+ipu6-camera-hal (0~git20201126.e93031a-1) UNRELEASED; urgency=medium
+
+  * Intel 20201126 release.
+  * Lintian error fixes:
+    - arch-independent-package-contains-binary-or-object
+    - missing-dependency-on-libc
+
+ -- You-Sheng Yang <vicamo.yang@canonical.com>  Thu, 17 Dec 2020 20:55:37 +0800
+
+ipu6-camera-hal (0~git20201022.4546911-1) UNRELEASED; urgency=medium
 
   * Initial release.
 
