@@ -1,0 +1,59 @@
+From 271c742609521756605bc2afbcac062a4e0a6c87 Mon Sep 17 00:00:00 2001
+From: You-Sheng Yang <vicamo@gmail.com>
+Date: Mon, 28 Dec 2020 20:12:57 +0800
+Subject: [PATCH] fix multiarch build
+
+---
+ CMakeLists.txt             | 10 +++++-----
+ cmake/libcamhal.pc.cmakein |  4 ++--
+ 2 files changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index deaa034..095bef7 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -68,6 +68,8 @@ message(STATUS "install prefix: " ${CMAKE_INSTALL_PREFIX})
+ 
+ #------------------------- Compilation settings -------------------------
+ 
++include(GNUInstallDirs)
++
+ # -fPIC in xos way
+ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+ 
+@@ -354,15 +356,13 @@ else()
+ endif()
+ 
+ # Install libraries
+-install(TARGETS camhal camhal_static
+-        LIBRARY DESTINATION lib
+-        ARCHIVE DESTINATION lib
+-        )
++install(TARGETS camhal camhal_static)
+ 
+ # Install package config file
+ configure_file(${PROJECT_SOURCE_DIR}/cmake/libcamhal.pc.cmakein
+                ${PROJECT_SOURCE_DIR}/libcamhal.pc @ONLY)
+-install(FILES libcamhal.pc DESTINATION lib/pkgconfig)
++install(FILES libcamhal.pc
++        DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
+ 
+ endif() #NOT CAL_BUILD
+ 
+diff --git a/cmake/libcamhal.pc.cmakein b/cmake/libcamhal.pc.cmakein
+index fe9e6ab..27ad098 100644
+--- a/cmake/libcamhal.pc.cmakein
++++ b/cmake/libcamhal.pc.cmakein
+@@ -1,7 +1,7 @@
+ prefix=@CMAKE_INSTALL_PREFIX@
+ exec_prefix=@CMAKE_INSTALL_PREFIX@
+-libdir=@CMAKE_INSTALL_PREFIX@/lib
+-includedir=@CMAKE_INSTALL_PREFIX@/include/libcamhal
++libdir=${prefix}/@CMAKE_INSTALL_LIBDIR@
++includedir=${prefix}/@CMAKE_INSTALL_INCLUDEDIR@/libcamhal
+ 
+ Name: libcamhal
+ Description: Camera HAL Library
+-- 
+2.29.2
+

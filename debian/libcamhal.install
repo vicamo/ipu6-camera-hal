@@ -1,2 +1,2 @@
-usr/lib/libcamhal.so /usr/lib
+usr/lib/*/libcamhal.so
 usr/share/defaults/etc/camera/ /etc

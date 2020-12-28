@@ -21,7 +21,6 @@ Description: shared libraries of HAL for ipu6 camera
 Package: libcamhal-dev
 Architecture: any
 Depends:
- ${shlibs:Depends},
  ${misc:Depends},
  libcamhal (= ${binary:Version}),
  libipu6-dev,
