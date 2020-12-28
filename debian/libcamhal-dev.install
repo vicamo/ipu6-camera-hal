@@ -1,3 +1,4 @@
 usr/include/libcamhal /usr/include
 usr/lib/*/libcamhal.a
+usr/lib/*/libcamhal.so
 usr/lib/*/pkgconfig/libcamhal.pc

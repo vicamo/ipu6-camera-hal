@@ -1,0 +1,25 @@
+From 4f521bb3a340fc54a0b7977425f9a8bc6884912a Mon Sep 17 00:00:00 2001
+From: You-Sheng Yang <vicamo@gmail.com>
+Date: Mon, 28 Dec 2020 22:02:36 +0800
+Subject: [PATCH] cmake: specify library version
+
+---
+ CMakeLists.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index deaa034..b6c2082 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -221,6 +221,8 @@ endif() #ENABLE_SANDBOXING
+ 
+ # Add libcamhal using the specified sources
+ add_library(camhal SHARED ${LIBCAMHAL_SRCS})
++set_target_properties(camhal PROPERTIES SOVERSION 0)
++set_target_properties(camhal PROPERTIES VERSION "0.0.0")
+ add_library(camhal_static STATIC ${LIBCAMHAL_SRCS})
+ set_target_properties(camhal_static PROPERTIES OUTPUT_NAME "camhal")
+ 
+-- 
+2.29.2
+

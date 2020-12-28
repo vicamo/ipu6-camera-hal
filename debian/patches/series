@@ -1,1 +1,2 @@
 0001-fix-multiarch-build.patch
+0002-cmake-specify-library-version.patch
