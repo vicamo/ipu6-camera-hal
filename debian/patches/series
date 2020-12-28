@@ -1,2 +1,3 @@
 0001-fix-multiarch-build.patch
 0002-cmake-specify-library-version.patch
+0003-cmake-link-pthread-properly.patch

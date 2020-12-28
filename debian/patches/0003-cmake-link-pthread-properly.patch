@@ -1,0 +1,28 @@
+From 9d5fdd616d41afac0811ffbcb42cbf26eee990ab Mon Sep 17 00:00:00 2001
+From: You-Sheng Yang <vicamo@gmail.com>
+Date: Mon, 28 Dec 2020 22:15:59 +0800
+Subject: [PATCH] cmake: link pthread properly
+
+---
+ CMakeLists.txt | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index deaa034..481089d 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -228,6 +228,11 @@ set_target_properties(camhal_static PROPERTIES OUTPUT_NAME "camhal")
+ target_link_libraries(camhal ${CMAKE_DL_LIBS})
+ target_link_libraries(camhal_static ${CMAKE_DL_LIBS})
+ 
++set (THREADS_PREFER_PTHREAD_FLAG ON)
++find_package (Threads REQUIRED)
++target_link_libraries(camhal ${CMAKE_THREAD_LIBS_INIT})
++target_link_libraries(camhal_static ${CMAKE_THREAD_LIBS_INIT})
++
+ target_link_libraries(camhal expat rt)
+ target_link_libraries(camhal_static expat rt)
+ 
+-- 
+2.29.2
+
