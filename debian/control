@@ -16,7 +16,8 @@ Architecture: any
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
-Description: shared libraries of HAL for ipu6 camera
+Description: HAL library for MIPI camera through Intel IPU6
+ This package contains the main runtime library.
 
 Package: libcamhal-dev
 Architecture: any
@@ -24,4 +25,5 @@ Depends:
  ${misc:Depends},
  libcamhal0 (= ${binary:Version}),
  libipu6-dev,
-Description: headers and static library of HAL for ipu6 camera
+Description: HAL library for MIPI camera through Intel IPU6 - development kit
+ This package contains development files for libcamhal0.
