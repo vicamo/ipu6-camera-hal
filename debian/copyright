@@ -2,12 +2,12 @@ Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: ipu6-camera-hal
 Source: https://github.com/intel/ipu6-camera-hal
 
-Files: debian/*
-Copyright: 2020 Canonical Limited
-License: Apache-2.0
-
 Files: *
 Copyright: 2020 Intel Corporation
+License: Apache-2.0
+
+Files: debian/*
+Copyright: 2020 Canonical Limited
 License: Apache-2.0
 
 License: Apache-2.0
