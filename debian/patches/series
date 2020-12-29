@@ -1,3 +1,4 @@
 0001-fix-multiarch-build.patch
 0002-cmake-specify-library-version.patch
 0003-cmake-link-pthread-properly.patch
+0004-cmake-correct-CAMERA_DEFAULT_CFG_PATH.patch

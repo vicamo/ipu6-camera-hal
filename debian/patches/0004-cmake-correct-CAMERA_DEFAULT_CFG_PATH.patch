@@ -1,0 +1,47 @@
+From f7194ff21a37c996805f92ff8b3ee2e669329766 Mon Sep 17 00:00:00 2001
+From: You-Sheng Yang <vicamo@gmail.com>
+Date: Tue, 29 Dec 2020 19:26:58 +0800
+Subject: [PATCH] cmake: correct CAMERA_DEFAULT_CFG_PATH
+
+---
+ CMakeLists.txt                  | 6 +++---
+ src/platformdata/PlatformData.h | 2 +-
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index deaa034..9abb06c 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -344,13 +344,13 @@ endif() #SUPPORT_LIVE_TUNING
+ # By default ipu4 is used
+ if("${IPU_VER}" STREQUAL "ipu6")
+     message("Install IPU6 configure files")
+-    install(DIRECTORY config/linux/ipu6/ DESTINATION share/defaults/etc/camera)
++    install(DIRECTORY config/linux/ipu6/ DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/camera)
+ elseif("${IPU_VER}" STREQUAL "ipu7")
+     message("Install IPU7 configure files")
+-    install(DIRECTORY config/linux/ipu7/ DESTINATION share/defaults/etc/camera)
++    install(DIRECTORY config/linux/ipu7/ DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/camera)
+ else()
+     message("Install IPU4 configure files")
+-    install(DIRECTORY config/linux/ipu4/ DESTINATION share/defaults/etc/camera)
++    install(DIRECTORY config/linux/ipu4/ DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/camera)
+ endif()
+ 
+ # Install libraries
+diff --git a/src/platformdata/PlatformData.h b/src/platformdata/PlatformData.h
+index 8fee043..ca16a25 100644
+--- a/src/platformdata/PlatformData.h
++++ b/src/platformdata/PlatformData.h
+@@ -79,7 +79,7 @@ namespace icamera {
+ #define MAX_CAMERA_NUMBER   100
+ // Temporarily using current path to save aiqd file for none CAL platforms.
+ #define CAMERA_CACHE_DIR "./"
+-#define CAMERA_DEFAULT_CFG_PATH "/usr/share/defaults/etc/camera/"
++#define CAMERA_DEFAULT_CFG_PATH "/etc/camera/"
+ #define CAMERA_GRAPH_DESCRIPTOR_FILE "gcss/graph_descriptor.xml"
+ #define CAMERA_GRAPH_SETTINGS_DIR "gcss/"
+ #endif
+-- 
+2.29.2
+

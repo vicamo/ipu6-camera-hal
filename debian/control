@@ -12,11 +12,19 @@ Maintainer: Commercial Engineering <commercial-engineering@canonical.com>
 Vcs-Browser: https://github.com/intel/ipu6-camera-hal
 Vcs-Git: https://github.com/intel/ipu6-camera-hal.git
 
+Package: libcamhal-common
+Architecture: all
+Depends:
+ ${misc:Depends},
+Description: HAL library for MIPI camera through Intel IPU6 - common files
+ This package contains default camera settings.
+
 Package: libcamhal0
 Architecture: any
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
+ libcamhal-common (= ${source:Version}),
 Description: HAL library for MIPI camera through Intel IPU6
  This package contains the main runtime library.
 
