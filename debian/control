@@ -6,6 +6,7 @@ Build-Depends:
  cmake,
  libexpat-dev,
  libipu6-dev,
+ pkg-config,
 Standards-Version: 4.5.0
 Maintainer: Commercial Engineering <commercial-engineering@canonical.com>
 Vcs-Browser: https://github.com/intel/ipu6-camera-hal
@@ -25,5 +26,6 @@ Depends:
  ${misc:Depends},
  libcamhal0 (= ${binary:Version}),
  libipu6-dev,
+ pkg-config,
 Description: HAL library for MIPI camera through Intel IPU6 - development kit
  This package contains development files for libcamhal0.
